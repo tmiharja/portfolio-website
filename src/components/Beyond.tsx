@@ -1,4 +1,7 @@
+import Image from "next/image";
 import type { Beyond as BeyondContent } from "@/lib/content";
+import beyondHike from "@/img/beyond-1.jpeg";
+import beyondAquarium from "@/img/beyond-2.jpeg";
 import Reveal from "./Reveal";
 import Section from "./Section";
 
@@ -14,38 +17,39 @@ export default function Beyond({ content }: { content: BeyondContent }) {
           </div>
         </Reveal>
         <Reveal delay={0.08}>
-          <PhotoPlaceholder />
+          <PhotoStack />
         </Reveal>
       </div>
     </Section>
   );
 }
 
-// Stand-in for the portrait while the layout is tuned. To swap in the real
-// photo, statically import it from src/img and render a next/image <Image>
-// with the same wrapper classes (aspect ratio, radius, max width).
-function PhotoPlaceholder() {
+// Two overlapping photos: one cropped to 4:5 at the back (top left) and a
+// portrait in front (bottom right). Each subject sits clear of the overlap. A theme-tinted veil over each keeps
+// them in the site's palette in both light and dark mode.
+function PhotoStack() {
   return (
-    <div
-      role="img"
-      aria-label="Photo placeholder"
-      className="mx-auto flex aspect-[4/5] w-full max-w-[240px] flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-rule bg-accent-soft text-muted sm:max-w-none"
-    >
-      <svg
-        width="44"
-        height="44"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <circle cx="12" cy="8" r="4" />
-        <path d="M4 21a8 8 0 0 1 16 0" />
-      </svg>
-      <span className="text-xs uppercase tracking-[0.14em]">Photo</span>
+    <div className="relative mx-auto aspect-[2/3] w-full max-w-[280px] sm:max-w-none">
+      <div className="photo-veil absolute left-0 top-0 aspect-[4/5] w-[78%] overflow-hidden rounded-xl">
+        <Image
+          src={beyondAquarium}
+          alt="Toni at home in front of his planted aquariums"
+          fill
+          sizes="(min-width: 640px) 160px, 240px"
+          placeholder="blur"
+          className="object-cover object-[52%_center]"
+        />
+      </div>
+      <div className="photo-veil absolute bottom-0 right-0 aspect-[3/4] w-[66%] overflow-hidden rounded-xl shadow-lg ring-4 ring-background">
+        <Image
+          src={beyondHike}
+          alt="Hiking a mountain ridge trail above a lake"
+          fill
+          sizes="(min-width: 640px) 140px, 210px"
+          placeholder="blur"
+          className="object-cover"
+        />
+      </div>
     </div>
   );
 }
