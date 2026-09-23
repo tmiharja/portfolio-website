@@ -1,3 +1,6 @@
+import Image from "next/image";
+import logoDark from "@/img/logo-dark.png";
+import logoLight from "@/img/logo-light.png";
 import ThemeToggle from "./ThemeToggle";
 
 const NAV = [
@@ -15,9 +18,24 @@ export default function Header({ name }: { name: string }) {
       >
         Skip to content
       </a>
-      <nav aria-label="Primary" className="flex items-baseline justify-between text-sm">
-        <a href="#main" className="font-medium tracking-tight">
-          {name}
+      <nav aria-label="Primary" className="flex items-center justify-between gap-6 text-sm">
+        <a href="#main" aria-label={name} className="shrink-0">
+          {/* Only the active theme's logo is displayed; lazy loading keeps the
+              hidden one from downloading until the theme switches. */}
+          <Image
+            src={logoLight}
+            alt=""
+            sizes="80px"
+            loading="lazy"
+            className="site-logo site-logo--light"
+          />
+          <Image
+            src={logoDark}
+            alt=""
+            sizes="80px"
+            loading="lazy"
+            className="site-logo site-logo--dark"
+          />
         </a>
         <div className="flex items-baseline gap-5">
           <ul className="flex gap-5 text-muted">
