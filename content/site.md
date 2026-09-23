@@ -1,6 +1,6 @@
 ---
 name: Toni Miharja
-headline: Hello, I am Toni.
+headline: Greetings, I'm Toni.
 role: Senior Engagement Manager, Digital & AI Practice — Oliver Wyman, Singapore
 email: "[YOUR EMAIL HERE]@example.com"
 linkedin: https://www.linkedin.com/in/[YOUR-LINKEDIN-HANDLE]
