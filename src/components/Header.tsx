@@ -9,7 +9,7 @@ const NAV = [
 
 export default function Header({ name }: { name: string }) {
   return (
-    <header className="mx-auto w-full max-w-[680px] px-6 pt-8">
+    <header className="absolute inset-x-0 top-0 z-10 mx-auto w-full max-w-[680px] px-6 pt-8">
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-background focus:z-10 focus:px-3 focus:py-2"

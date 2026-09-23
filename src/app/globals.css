@@ -70,19 +70,48 @@ body {
   border-radius: 2px;
 }
 
-/* Hero background: a soft light whose focal point (--glow-x/--glow-y) is
-   driven by HeroGlow. It spans the full viewport width, reaches up behind the
-   header and fades out below the hero so it has no visible edges. */
+/* Hero: a full-width image band sized to feel generous on desktop without
+   pushing the copy off-screen on short or narrow viewports. */
+.hero {
+  min-height: clamp(440px, 72svh, 780px);
+}
+
+.hero-image {
+  object-fit: cover;
+}
+.hero-image--light {
+  object-position: 35% 60%;
+}
+.hero-image--dark {
+  display: none;
+  object-position: 62% 45%;
+}
+.dark .hero-image--light {
+  display: none;
+}
+.dark .hero-image--dark {
+  display: block;
+}
+
+/* Melts the bottom of the image into the page background. */
+.hero-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    color-mix(in srgb, var(--background) 60%, transparent) 80%,
+    var(--background)
+  );
+}
+
+/* A soft light over the hero image whose focal point (--glow-x/--glow-y) is
+   driven by HeroGlow. */
 .hero-glow {
   --glow-x: 42%;
   --glow-y: 34%;
   position: absolute;
-  z-index: -1;
-  top: -16rem;
-  bottom: -8rem;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
+  inset: 0;
   pointer-events: none;
   user-select: none;
   /* Multi-stop falloffs approximate an ease-out curve, so neither light has a
@@ -103,8 +132,6 @@ body {
       color-mix(in srgb, var(--glow-halo) 15%, transparent) 65%,
       transparent
     );
-  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
-  mask-image: linear-gradient(to bottom, #000 60%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
