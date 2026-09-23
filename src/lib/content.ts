@@ -37,6 +37,11 @@ export type Post = {
   date: string;
 };
 
+export type Beyond = {
+  title: string;
+  paragraphs: string[];
+};
+
 function readFile(relPath: string) {
   return matter(fs.readFileSync(path.join(CONTENT_DIR, relPath), "utf8"));
 }
@@ -47,6 +52,13 @@ function readDir(relDir: string) {
     .readdirSync(dir)
     .filter((f) => f.endsWith(".md") || f.endsWith(".mdx"))
     .map((f) => ({ slug: f.replace(/\.mdx?$/, ""), ...readFile(path.join(relDir, f)) }));
+}
+
+function toParagraphs(content: string) {
+  return content
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean);
 }
 
 function toDateString(value: unknown): string {
@@ -66,10 +78,15 @@ export function getSite(): Site {
     role: String(data.role),
     email: String(data.email),
     linkedin: String(data.linkedin),
-    bio: content
-      .split(/\n\s*\n/)
-      .map((p) => p.trim())
-      .filter(Boolean),
+    bio: toParagraphs(content),
+  };
+}
+
+export function getBeyond(): Beyond {
+  const { data, content } = readFile("beyond.md");
+  return {
+    title: String(data.title ?? "Beyond the work"),
+    paragraphs: toParagraphs(content),
   };
 }
 
