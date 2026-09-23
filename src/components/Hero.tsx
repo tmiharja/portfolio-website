@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 
 export default function Hero({ site }: { site: Site }) {
   return (
-    <section id="about" aria-labelledby="about-heading" className="relative">
+    <section id="about" aria-labelledby="about-heading" className="relative pb-12 sm:pb-20">
       <HeroGlow />
       <Reveal>
         <h1 id="about-heading" className="text-3xl font-medium tracking-tight sm:text-4xl">
