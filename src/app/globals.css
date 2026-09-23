@@ -19,6 +19,7 @@
   --accent-soft: #eef3f8;
   --glow-core: rgb(96 96 96 / 0.24);
   --glow-halo: rgb(128 128 128 / 0.12);
+  --photo-veil: rgb(255 255 255 / 0.22);
   color-scheme: light;
 }
 
@@ -31,6 +32,7 @@
   --accent-soft: #1b2733;
   --glow-core: rgb(143 180 220 / 0.10);
   --glow-halo: rgb(70 100 150 / 0.12);
+  --photo-veil: rgb(8 9 11 / 0.38);
   color-scheme: dark;
 }
 
@@ -116,6 +118,16 @@ body {
 }
 .dark .site-logo--dark {
   display: block;
+}
+
+/* Theme-tinted wash over content photos: brightens them in light mode and
+   dims them in dark mode, so personal photos sit in the site's palette. */
+.photo-veil::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--photo-veil);
+  pointer-events: none;
 }
 
 /* Hero: a full-width image band sized to feel generous on desktop without
