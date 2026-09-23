@@ -1,9 +1,11 @@
 import type { Site } from "@/lib/content";
+import HeroGlow from "./HeroGlow";
 import Reveal from "./Reveal";
 
 export default function Hero({ site }: { site: Site }) {
   return (
-    <section id="about" aria-labelledby="about-heading">
+    <section id="about" aria-labelledby="about-heading" className="relative">
+      <HeroGlow />
       <Reveal>
         <h1 id="about-heading" className="text-3xl font-medium tracking-tight sm:text-4xl">
           {site.headline}
