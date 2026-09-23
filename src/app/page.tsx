@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Summary from "@/components/Summary";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Writing from "@/components/Writing";
@@ -15,14 +16,14 @@ export default function Home() {
   return (
     <>
       <Header name={site.name} />
-      <main
-        id="main"
-        className="mx-auto w-full max-w-[680px] flex-1 px-6 pb-24 pt-16 sm:pt-24"
-      >
+      <main id="main" className="flex-1 pb-24">
         <Hero site={site} />
-        <Experience roles={roles} />
-        <Projects projects={projects} />
-        <Writing posts={posts} />
+        <div className="mx-auto w-full max-w-[680px] px-6 pt-12 sm:pt-16">
+          <Summary bio={site.bio} />
+          <Experience roles={roles} />
+          <Projects projects={projects} />
+          <Writing posts={posts} />
+        </div>
       </main>
       <Footer email={site.email} linkedin={site.linkedin} name={site.name} />
     </>
