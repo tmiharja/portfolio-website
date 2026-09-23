@@ -8,9 +8,14 @@ export const metadata: Metadata = {
     "Toni Miharja leads digital and AI product delivery at Oliver Wyman, Singapore: agent design, evaluation, production rollout, and guardrails for LLM systems.",
 };
 
+const THEME_INIT = `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;if(d)document.documentElement.classList.add("dark")}catch(e){}})();`;
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
