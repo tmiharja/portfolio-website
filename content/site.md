@@ -1,7 +1,7 @@
 ---
 name: Toni Miharja
 headline: Greetings, I'm Toni.
-role: Senior Engagement Manager, Digital & AI Practice — Oliver Wyman, Singapore
+role: Applied AI | Strategy | Delivery
 email: "miharja.toni@gmail.com"
 linkedin: https://www.linkedin.com/in/tonimiharja
 ---
