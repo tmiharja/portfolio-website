@@ -6,11 +6,6 @@ export default function Footer({ email, linkedin, name }: Props) {
       <div className="border-t border-rule pt-8 text-sm">
         <ul className="flex flex-wrap gap-6">
           <li>
-            <a href={`mailto:${email}`} className="link">
-              Email
-            </a>
-          </li>
-          <li>
             <a href={linkedin} className="link" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
