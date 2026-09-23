@@ -25,7 +25,7 @@ export default function Home() {
           <Writing posts={posts} />
         </div>
       </main>
-      <Footer email={site.email} linkedin={site.linkedin} name={site.name} />
+      <Footer linkedin={site.linkedin} name={site.name} />
     </>
   );
 }

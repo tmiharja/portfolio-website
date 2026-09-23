@@ -1,6 +1,6 @@
-type Props = { email: string; linkedin: string; name: string };
+type Props = { linkedin: string; name: string };
 
-export default function Footer({ email, linkedin, name }: Props) {
+export default function Footer({ linkedin, name }: Props) {
   return (
     <footer id="contact" className="mx-auto w-full max-w-[680px] px-6 pb-12 scroll-mt-24">
       <div className="border-t border-rule pt-8 text-sm">
