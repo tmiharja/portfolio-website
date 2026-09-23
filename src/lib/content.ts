@@ -6,6 +6,7 @@ const CONTENT_DIR = path.join(process.cwd(), "content");
 
 export type Site = {
   name: string;
+  headline: string;
   role: string;
   email: string;
   linkedin: string;
@@ -61,6 +62,7 @@ export function getSite(): Site {
   const { data, content } = readFile("site.md");
   return {
     name: String(data.name),
+    headline: String(data.headline ?? data.name),
     role: String(data.role),
     email: String(data.email),
     linkedin: String(data.linkedin),

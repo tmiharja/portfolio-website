@@ -6,7 +6,7 @@ export default function Hero({ site }: { site: Site }) {
     <section id="about" aria-labelledby="about-heading">
       <Reveal>
         <h1 id="about-heading" className="text-3xl font-medium tracking-tight sm:text-4xl">
-          {site.name}
+          {site.headline}
         </h1>
         <p className="mt-3 text-base text-muted">{site.role}</p>
       </Reveal>
