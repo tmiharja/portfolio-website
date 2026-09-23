@@ -70,6 +70,22 @@ body {
   border-radius: 2px;
 }
 
+/* Header logo. Height tracks the smaller viewport dimension, so it scales with
+   the window's shape as well as its width; width follows the logo's ratio. */
+.site-logo {
+  height: clamp(24px, 1rem + 1.6vmin, 40px);
+  width: auto;
+}
+.site-logo--dark {
+  display: none;
+}
+.dark .site-logo--light {
+  display: none;
+}
+.dark .site-logo--dark {
+  display: block;
+}
+
 /* Hero: a full-width image band sized to feel generous on desktop without
    pushing the copy off-screen on short or narrow viewports. */
 .hero {
