@@ -9,15 +9,19 @@ type Props = {
   className?: string;
 };
 
+const hidden = { opacity: 0, y: 12 };
+const visible = { opacity: 1, y: 0 };
+
 export default function Reveal({ children, delay = 0, className }: Props) {
   const reduce = useReducedMotion();
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={hidden}
+      animate={reduce ? visible : undefined}
+      whileInView={visible}
       viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-      transition={{ duration: 0.35, ease: "easeOut", delay }}
+      transition={reduce ? { duration: 0 } : { duration: 0.35, ease: "easeOut", delay }}
     >
       {children}
     </motion.div>
