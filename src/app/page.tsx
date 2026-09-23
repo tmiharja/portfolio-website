@@ -4,14 +4,16 @@ import Summary from "@/components/Summary";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Writing from "@/components/Writing";
+import Beyond from "@/components/Beyond";
 import Footer from "@/components/Footer";
-import { getExperience, getPosts, getProjects, getSite } from "@/lib/content";
+import { getBeyond, getExperience, getPosts, getProjects, getSite } from "@/lib/content";
 
 export default function Home() {
   const site = getSite();
   const roles = getExperience();
   const projects = getProjects();
   const posts = getPosts();
+  const beyond = getBeyond();
 
   return (
     <>
@@ -23,6 +25,7 @@ export default function Home() {
           <Experience roles={roles} />
           <Projects projects={projects} />
           <Writing posts={posts} />
+          <Beyond content={beyond} />
         </div>
       </main>
       <Footer linkedin={site.linkedin} name={site.name} />
