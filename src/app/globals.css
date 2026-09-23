@@ -17,6 +17,8 @@
   --rule: #e6e4df;
   --accent: #1f4e79;
   --accent-soft: #eef3f8;
+  --glow-core: rgb(31 78 121 / 0.11);
+  --glow-halo: rgb(120 150 190 / 0.08);
   color-scheme: light;
 }
 
@@ -27,6 +29,8 @@
   --rule: #2a2c30;
   --accent: #8fb4dc;
   --accent-soft: #1b2733;
+  --glow-core: rgb(143 180 220 / 0.10);
+  --glow-halo: rgb(70 100 150 / 0.12);
   color-scheme: dark;
 }
 
@@ -35,6 +39,7 @@ html {
 }
 
 body {
+  overflow-x: clip;
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
@@ -63,6 +68,43 @@ body {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+/* Hero background: a soft light whose focal point (--glow-x/--glow-y) is
+   driven by HeroGlow. It spans the full viewport width, reaches up behind the
+   header and fades out below the hero so it has no visible edges. */
+.hero-glow {
+  --glow-x: 42%;
+  --glow-y: 34%;
+  position: absolute;
+  z-index: -1;
+  top: -16rem;
+  bottom: -8rem;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+  /* Multi-stop falloffs approximate an ease-out curve, so neither light has a
+     visible edge. */
+  background:
+    radial-gradient(
+      min(640px, 85vw) circle at var(--glow-x) var(--glow-y),
+      var(--glow-core),
+      color-mix(in srgb, var(--glow-core) 55%, transparent) 30%,
+      color-mix(in srgb, var(--glow-core) 22%, transparent) 55%,
+      color-mix(in srgb, var(--glow-core) 6%, transparent) 78%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 75% 65% at calc(100% - var(--glow-x) * 0.6) 30%,
+      var(--glow-halo),
+      color-mix(in srgb, var(--glow-halo) 50%, transparent) 35%,
+      color-mix(in srgb, var(--glow-halo) 15%, transparent) 65%,
+      transparent
+    );
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  mask-image: linear-gradient(to bottom, #000 60%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
