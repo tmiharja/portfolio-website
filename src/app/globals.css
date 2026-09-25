@@ -130,6 +130,18 @@ body {
   pointer-events: none;
 }
 
+/* Content photos rest in monochrome and regain colour on hover. Only applied
+   where hover exists, so touch users always see colour. */
+@media (hover: hover) {
+  .photo-mono img {
+    filter: grayscale(1);
+    transition: filter 450ms ease-out;
+  }
+  .photo-mono:hover img {
+    filter: grayscale(0);
+  }
+}
+
 /* Hero: a full-width image band sized to feel generous on desktop without
    pushing the copy off-screen on short or narrow viewports. */
 .hero {
