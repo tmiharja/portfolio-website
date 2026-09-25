@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { formatDate, type Post } from "@/lib/content";
 import Reveal from "./Reveal";
 import Section from "./Section";
@@ -14,7 +15,11 @@ export default function Writing({ posts }: { posts: Post[] }) {
                   {formatDate(post.date)}
                 </time>
                 <div>
-                  <h3 className="font-medium leading-snug">{post.title}</h3>
+                  <h3 className="font-medium leading-snug">
+                    <Link href={`/writing/${post.slug}`} className="link !text-foreground">
+                      {post.title}
+                    </Link>
+                  </h3>
                   <p className="mt-1 text-[15px] text-muted">{post.summary}</p>
                 </div>
               </article>

@@ -1,13 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 import logoDark from "@/img/logo-dark.png";
 import logoLight from "@/img/logo-light.png";
 import HeaderShell from "./HeaderShell";
 import ThemeToggle from "./ThemeToggle";
 
 const NAV = [
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#writing", label: "Writing" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#writing", label: "Writing" },
 ];
 
 export default function Header({ name }: { name: string }) {
@@ -21,7 +22,7 @@ export default function Header({ name }: { name: string }) {
           Skip to content
         </a>
         <nav aria-label="Primary" className="flex items-center justify-between gap-6 text-sm">
-          <a href="#main" aria-label={name} className="shrink-0">
+          <Link href="/" aria-label={name} className="shrink-0">
             {/* Only the active theme's logo is displayed; lazy loading keeps the
                 hidden one from downloading until the theme switches. */}
             <Image
@@ -38,7 +39,7 @@ export default function Header({ name }: { name: string }) {
               loading="lazy"
               className="site-logo site-logo--dark"
             />
-          </a>
+          </Link>
           <div className="flex items-baseline gap-5">
             <ul className="flex gap-5 text-muted">
             {NAV.map((item) => (

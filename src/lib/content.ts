@@ -37,6 +37,12 @@ export type Post = {
   date: string;
 };
 
+export type PostBlock =
+  | { type: "heading"; text: string }
+  | { type: "paragraph"; text: string };
+
+export type PostDetail = Post & { blocks: PostBlock[] };
+
 export type Beyond = {
   title: string;
   paragraphs: string[];
@@ -117,6 +123,29 @@ export function getPosts(): Post[] {
       date: toDateString(data.date),
     }))
     .sort(byDateDesc);
+}
+
+// Posts are written in markdown; for now only "## " headings and plain
+// paragraphs are recognised, which is enough for the skeleton posts.
+function toBlocks(content: string): PostBlock[] {
+  return toParagraphs(content).map((block) =>
+    block.startsWith("## ")
+      ? { type: "heading", text: block.slice(3).trim() }
+      : { type: "paragraph", text: block },
+  );
+}
+
+export function getPost(slug: string): PostDetail | undefined {
+  const match = readDir("posts").find((post) => post.slug === slug);
+  if (!match) return undefined;
+  const { data, content } = match;
+  return {
+    slug,
+    title: String(data.title),
+    summary: String(data.summary),
+    date: toDateString(data.date),
+    blocks: toBlocks(content),
+  };
 }
 
 export function formatDate(date: string) {
