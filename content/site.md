@@ -1,13 +1,13 @@
 ---
 name: Toni Miharja
-headline: Greetings, I'm Toni.
-role: Applied AI | Strategy | Delivery
+headline: Hi, I'm Toni.
+role: Applied AI | Strategy | Tech Delivery
 email: "miharja.toni@gmail.com"
 linkedin: https://www.linkedin.com/in/tonimiharja
 ---
 
-I lead digital and AI product delivery for clients across Southeast Asia with focus on Financial Services sector — taking products from concept through launch and production rollout. Most of that work sits between business stakeholders and engineering teams: defining the use case, sequencing the build, and scaling the commercial engine behind the product post launch.
+Technology and digital strategist with 8+ years of experience at the intersection of tech, strategy and execution across APAC, with deep expertise in financial services.
 
-On the AI side I work hands-on with LLM systems: agent orchestration, evaluation and UAT design, production rollout, fine-tuning versus prompting trade-offs, guardrails, and observability. Before consulting I did research in reinforcement learning and convolutional neural networks at Nanyang Technological University Singapore. Previously a software engineer/ technology analyst for GIC and HSBC.
+As an Engagement Manager in Oliver Wyman’s Digital & AI practice, I lead cross-functional teams of deployed engineers and consultants to help clients translate complex business problems into tech-enabled solutions. My work spans AI product and solution development, digital venture building, and large-scale transformation - from design, technical implementation and adoption.
 
-Nice to meet you!
+A computer scientist by training and former software engineer, I bring a combination of technical, strategic and commercial depth. I am particularly interested in turning emerging tech & AI into practical, scalable solutions that create measurable impact.
