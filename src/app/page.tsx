@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Summary from "@/components/Summary";
+import AboutGallery from "@/components/AboutGallery";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Writing from "@/components/Writing";
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero site={site} />
         <div className="mx-auto w-full max-w-[680px] px-6 pt-12 sm:pt-16">
           <Summary bio={site.bio} />
+          <AboutGallery />
           <Experience roles={roles} />
           <Projects projects={projects} />
           <Writing posts={posts} />
