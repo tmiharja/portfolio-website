@@ -8,7 +8,7 @@ const SPARK_MIN = 50;
 const SPARK_MAX = 150;
 const JITTER = 0.22;
 const DEPTH = 4;
-const FADE = 0.06;
+const FADE = 0.09;
 
 type Theme = { r: number; g: number; b: number; core: number; halo: number };
 
@@ -106,7 +106,7 @@ export default function CursorField() {
       cursor.y += dy * LAG;
       const gap = Math.hypot(dx, dy);
 
-      const moving = gap > 1.5;
+      const moving = gap > 4;
       energy = moving ? Math.min(1, energy + 0.25) : Math.max(0, energy - FADE);
 
       ctx.clearRect(0, 0, width, height);
@@ -142,6 +142,7 @@ export default function CursorField() {
     };
 
     const wake = () => {
+      if (reduceMotion.matches) return;
       if (!running) {
         running = true;
         frame = requestAnimationFrame(draw);
@@ -149,6 +150,7 @@ export default function CursorField() {
     };
 
     const onMove = (e: PointerEvent) => {
+      if (reduceMotion.matches) return;
       if (cursor.x < -1000) {
         cursor.x = e.clientX;
         cursor.y = e.clientY;
@@ -174,7 +176,6 @@ export default function CursorField() {
       running = false;
       energy = 0;
       ctx.clearRect(0, 0, width, height);
-      window.removeEventListener("pointermove", onMove);
     };
 
     const observer = new MutationObserver(() => {
