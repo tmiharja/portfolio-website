@@ -4,7 +4,7 @@ roles:
     company: Oliver Wyman
     location: Singapore, APAC
     period: 2019 – Present
-    summary: Lead design, build and launch of digital & AI products for Financial Services & Retail clients across APAC. Most recently led a cross-functional team of 50+ engineers and consultants to launch a digital lending venture from scratch in accelerated timeframe of ~8 months
+    summary: Led design, build and launch of digital & AI products for Financial Services & Retail clients across APAC. Most recently led a cross-functional team of 50+ engineers and consultants to launch a digital lending venture from scratch in accelerated timeframe of ~8 months. Led customer adoption, change management and value realisation programs in large enterprises, working closely with C-suite sponsors to define targets and track impact metrics for technology programs. Financial services domain depth – with prior work in lending origination and servicing, insurance and bancassurance, and digital banking.
   - title: Co-Founder
     company: ThincTanc.Co
     location: Indonesia
