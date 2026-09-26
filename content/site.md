@@ -4,6 +4,7 @@ headline: Hi, I'm Toni.
 role: Applied AI | Strategy | Tech Delivery
 email: "miharja.toni@gmail.com"
 linkedin: https://www.linkedin.com/in/tonimiharja
+github: https://github.com/tmiharja/
 ---
 
 Technology and digital strategist with 8+ years of experience at the intersection of tech, strategy and execution across APAC, with deep expertise in financial services.

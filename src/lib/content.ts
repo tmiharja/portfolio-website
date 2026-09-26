@@ -10,6 +10,7 @@ export type Site = {
   role: string;
   email: string;
   linkedin: string;
+  github: string;
   bio: string[];
 };
 
@@ -84,6 +85,7 @@ export function getSite(): Site {
     role: String(data.role),
     email: String(data.email),
     linkedin: String(data.linkedin),
+    github: String(data.github),
     bio: toParagraphs(content),
   };
 }
