@@ -130,15 +130,14 @@ body {
   pointer-events: none;
 }
 
-/* Content photos rest in monochrome and regain colour on hover. Only applied
-   where hover exists, so touch users always see colour. */
+/* Content photos show in full colour and brighten slightly on hover. Only
+   applied where hover exists, so touch devices never get stuck brightened. */
 @media (hover: hover) {
-  .photo-mono img {
-    filter: grayscale(1);
-    transition: filter 450ms ease-out;
+  .photo-hover img {
+    transition: filter 350ms ease-out;
   }
-  .photo-mono:hover img {
-    filter: grayscale(0);
+  .photo-hover:hover img {
+    filter: brightness(1.08);
   }
 }
 

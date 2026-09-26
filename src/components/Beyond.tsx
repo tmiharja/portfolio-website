@@ -30,7 +30,7 @@ export default function Beyond({ content }: { content: BeyondContent }) {
 function PhotoStack() {
   return (
     <div className="relative mx-auto aspect-[2/3] w-full max-w-[280px] sm:max-w-none">
-      <div className="photo-veil photo-mono absolute left-0 top-0 aspect-[4/5] w-[78%] overflow-hidden rounded-xl">
+      <div className="photo-veil photo-hover absolute left-0 top-0 aspect-[4/5] w-[78%] overflow-hidden rounded-xl">
         <Image
           src={beyondAquarium}
           alt="Toni at home in front of his planted aquariums"
@@ -40,7 +40,7 @@ function PhotoStack() {
           className="object-cover object-[52%_center]"
         />
       </div>
-      <div className="photo-veil photo-mono absolute bottom-0 right-0 aspect-[3/4] w-[66%] overflow-hidden rounded-xl shadow-lg ring-4 ring-background">
+      <div className="photo-veil photo-hover absolute bottom-0 right-0 aspect-[3/4] w-[66%] overflow-hidden rounded-xl shadow-lg ring-4 ring-background">
         <Image
           src={beyondHike}
           alt="Hiking a mountain ridge trail above a lake"
