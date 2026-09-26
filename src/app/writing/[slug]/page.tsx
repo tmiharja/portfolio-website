@@ -94,7 +94,7 @@ export default async function PostPage({ params }: Props) {
           </nav>
         )}
       </main>
-      <Footer linkedin={site.linkedin} name={site.name} />
+      <Footer linkedin={site.linkedin} github={site.github} name={site.name} />
     </>
   );
 }

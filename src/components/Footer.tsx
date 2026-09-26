@@ -1,6 +1,6 @@
-type Props = { linkedin: string; name: string };
+type Props = { linkedin: string; github: string; name: string };
 
-export default function Footer({ linkedin, name }: Props) {
+export default function Footer({ linkedin, github, name }: Props) {
   return (
     <footer id="contact" className="mx-auto w-full max-w-[680px] px-6 pb-12 scroll-mt-24">
       <div className="border-t border-rule pt-8 text-sm">
@@ -8,6 +8,11 @@ export default function Footer({ linkedin, name }: Props) {
           <li>
             <a href={linkedin} className="link" target="_blank" rel="noopener noreferrer">
               LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href={github} className="link" target="_blank" rel="noopener noreferrer">
+              GitHub
             </a>
           </li>
         </ul>

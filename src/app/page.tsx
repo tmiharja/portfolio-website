@@ -30,7 +30,7 @@ export default function Home() {
           <Beyond content={beyond} />
         </div>
       </main>
-      <Footer linkedin={site.linkedin} name={site.name} />
+      <Footer linkedin={site.linkedin} github={site.github} name={site.name} />
     </>
   );
 }
