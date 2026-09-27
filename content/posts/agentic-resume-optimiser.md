@@ -24,13 +24,13 @@ A general chatbot can get you far nowadays, if you prompt it well and ask the ri
 Exploring the different design options and balancing the trade-offs across the agent pipeline are both exciting and tricky. Putting up necessary guard rails in place also took several iterations.
 
 ### Overall workflow
-[Add image here]
+![Overall workflow](src/img/resume-optimiser-overall-workflow.PNG)
 
 
 ### Architecture and tech stack
 The overall system is one Next.js app deployed on Vercel, with 3 pay-as-you-go services. 
 
-[Add image here]
+![Overall workflow](src/img/resume-optimiser-overall-architecture.PNG)
 
 The browser loads the pages and send each resume to a single serverless function (pre-stream check function). The function checks the file, asks Redis whether the visitor is within the limits before then initiating the agentic workflow. The agent workflow runs five agents through the Anthropic API and streams progress back as it goes. 
 
