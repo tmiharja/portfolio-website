@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import PostBody from "@/components/PostBody";
 import { formatDate, getPost, getPosts, getSite } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -54,19 +55,8 @@ export default async function PostPage({ params }: Props) {
             <p className="mt-4 text-lg leading-relaxed text-muted">{post.summary}</p>
           </header>
 
-          <div className="mt-10 space-y-5 border-t border-rule pt-10 text-[17px] leading-relaxed">
-            {post.blocks.map((block, i) =>
-              block.type === "heading" ? (
-                <h2
-                  key={i}
-                  className="!mt-12 text-xl font-semibold tracking-tight first:!mt-0 sm:text-2xl"
-                >
-                  {block.text}
-                </h2>
-              ) : (
-                <p key={i}>{block.text}</p>
-              ),
-            )}
+          <div className="mt-10 border-t border-rule pt-10 text-[17px] leading-relaxed">
+            <PostBody markdown={post.body} />
           </div>
         </article>
 
