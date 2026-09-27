@@ -1,5 +1,5 @@
 ---
-title: Building Agentic Resume Optimiser v1: A Multi-Agent AI Workflow for Job Seekers
+title: Building Agentic Resume Optimiser v1 - A Multi-Agent AI Workflow for Job Seekers
 summary: "[Documenting the entire process from initial design, solution architecture and refinement.]"
 date: 2026-09-27
 ---
