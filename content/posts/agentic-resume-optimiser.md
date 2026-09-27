@@ -1,3 +1,9 @@
+---
+title: Building Agentic Resume Optimiser v1: A Multi-Agent AI Workflow for Job Seekers
+summary: Documenting the entire process from initial design, solution architecture and refinement.
+date: 2026-09-27
+---
+
 # Building Agentic Resume Optimiser v1: A Multi-Agent AI Pipeline for Job Seekers
 
 Over the years, I have spoken to many Indonesian professionals who are looking for opportunities overseas - some are friends of friends and others via my [instagram platform](https://www.instagram.com/ton_inmotion). Especially the past 2 years, the interest has risen significantly (see [#KaburAjaDulu](https://www.channelnewsasia.com/cna-insider/indonesian-youth-unemployment-brain-drain-kaburajadulu-run-away-cost-5371406)). 
