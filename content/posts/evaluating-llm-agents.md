@@ -1,5 +1,5 @@
 ---
-title: CERS-DR : Cycle-Based ETF Rotation Strategy with Dynamic Rebalancing with The Application of Reinforcement Learning and Neural Network
+title: CERS-DR (Cycle-Based ETF Rotation Strategy with Dynamic Rebalancing) with The Application of Reinforcement Learning and Neural Network
 summary: "Research Paper"
 date: 2019-02-10
 ---
