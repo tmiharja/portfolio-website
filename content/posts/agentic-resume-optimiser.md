@@ -4,6 +4,8 @@ summary: Documenting the entire process from initial design, solution architectu
 date: 2026-09-27
 ---
 
+![Demo](/public/img/posts/resume-optimiser.gif)
+
 Over the years, I have spoken to many Indonesian professionals who are looking for opportunities overseas - some are friends of friends and others via my [instagram platform](https://www.instagram.com/ton_inmotion). Especially the past 2 years, the interest has risen significantly (see [#KaburAjaDulu](https://www.channelnewsasia.com/cna-insider/indonesian-youth-unemployment-brain-drain-kaburajadulu-run-away-cost-5371406)). 
 
 One of the questions that typically pop up is **how to best highlight past work/ experiences to recruiters of global/ multinational companies**. After screening hundreds of resumes for management consulting recruiting and helping several people last year to enhance their resumes, I noticed several key patterns and common pitfalls. While these may seem obvious to experienced job seekers in global markets like Singapore, Hong Kong, etc., I realize some tips/practices may not as obvious. This becomes my motivation to build the **'Resume Optimiser'** - with the aim of **codifying what I have learned and making it more accessible to Indonesian professionals looking for jobs in global markets** like Singapore, Hong Kong, etc.
@@ -28,13 +30,13 @@ A general chatbot can get you far nowadays, if you prompt it well and ask the ri
 Exploring the different design options and balancing the trade-offs across the agent pipeline are both exciting and tricky. Putting up necessary guard rails in place also took several iterations.
 
 ### Overall workflow
-![Overall workflow](/img/posts/resume-optimiser-overall-workflow.PNG)
+![Overall workflow](/public/img/posts/resume-optimiser-overall-workflow.PNG)
 
 
 ### Architecture and tech stack
 The overall system is one Next.js app deployed on Vercel, with 3 pay-as-you-go services. 
 
-![Overall workflow](/img/posts/resume-optimiser-overall-architecture.PNG)
+![Overall workflow](/public/img/posts/resume-optimiser-overall-architecture.PNG)
 
 The browser loads the pages and send each resume to a single serverless function (pre-stream check function). The function checks the file, asks Redis whether the visitor is within the limits before then initiating the agentic workflow. The agent workflow runs five agents through the Anthropic API and streams progress back as it goes. 
 
@@ -46,8 +48,6 @@ The browser loads the pages and send each resume to a single serverless function
 4. **Rewrite only the weakest bullets.** Keeps each run focused on the areas where most improvement can be derived. Trade-off: User do not get a fully rewritten resume.
 5. **Nothing stored, no accounts.** This is for privacy purposes. Trade-off: No history or before-after comparisons and anonymous stats make quality issues hrader to investigate.
 6. **Close the service if the limit service is down.** This is to avoid cost exceeding budget. Trade-off: When there is Redis outage, the tool is also unavailable.
-
-![Demo](/img/posts/resume-optimiser.gif)
 
 ## Closing
 The overall build was realy fun and I got to experiment with new tech stacks and interfaces that I have not yet touched before. Let me know if you have any feedback! :)
