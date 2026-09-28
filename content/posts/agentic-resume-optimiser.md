@@ -4,7 +4,7 @@ summary: Documenting the entire process from initial design, solution architectu
 date: 2026-09-27
 ---
 
-![Demo](/img/posts/resume-optimiser.gif)
+![Demo](/img/posts/resume-optimiser.mp4)
 
 Over the years, I have spoken to many Indonesian professionals who are looking for opportunities overseas - some are friends of friends and others via my [instagram platform](https://www.instagram.com/ton_inmotion). Especially the past 2 years, the interest has risen significantly (see [#KaburAjaDulu](https://www.channelnewsasia.com/cna-insider/indonesian-youth-unemployment-brain-drain-kaburajadulu-run-away-cost-5371406)). 
 

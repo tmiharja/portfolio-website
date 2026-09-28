@@ -1,11 +1,29 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { Components } from "react-markdown";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import PostVideo from "./PostVideo";
 
 // Files in public/ are served from the site root, so "/public/img/x.png" is
 // really "/img/x.png". Accept both spellings in posts.
 function toPublicUrl(src: string) {
   return src.replace(/^\/?public\//, "/");
+}
+
+// A post names one video file; offer every format of it that exists in
+// public/, WebM first (smaller, plays where H.264 isn't licensed) then MP4
+// (needed by Safari). Falls back to the URL as written.
+const VIDEO_TYPES = [
+  { ext: ".webm", type: "video/webm" },
+  { ext: ".mp4", type: "video/mp4" },
+];
+function videoSources(url: string) {
+  const base = url.replace(/\.(mp4|webm)$/i, "");
+  const found = VIDEO_TYPES.filter(({ ext }) =>
+    fs.existsSync(path.join(process.cwd(), "public", base + ext)),
+  ).map(({ ext, type }) => ({ src: base + ext, type }));
+  return found.length ? found : [{ src: url, type: url.endsWith(".webm") ? "video/webm" : "video/mp4" }];
 }
 
 // Maps each markdown element to the site's typography. Raw HTML in posts is
@@ -47,17 +65,23 @@ const components: Components = {
     <blockquote className="mt-6 border-l-2 border-rule pl-5 text-muted">{children}</blockquote>
   ),
   hr: () => <hr className="my-10 border-rule" />,
-  img: ({ src, alt }) => (
-    // Post images come from markdown with unknown dimensions, so a plain <img>
-    // is used instead of next/image.
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={typeof src === "string" ? toPublicUrl(src) : undefined}
-      alt={alt ?? ""}
-      loading="lazy"
-      className="mt-6 w-full rounded-xl border border-rule"
-    />
-  ),
+  img: ({ src, alt }) => {
+    if (typeof src !== "string") return null;
+    const url = toPublicUrl(src);
+    // Video files use the same ![alt](path) syntax and play like a GIF.
+    if (/\.(mp4|webm)$/i.test(url)) return <PostVideo sources={videoSources(url)} label={alt ?? ""} />;
+    return (
+      // Post images come from markdown with unknown dimensions, so a plain
+      // <img> is used instead of next/image.
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={url}
+        alt={alt ?? ""}
+        loading="lazy"
+        className="mt-6 w-full rounded-xl border border-rule"
+      />
+    );
+  },
   code: ({ className, children }) =>
     className ? (
       <code className={className}>{children}</code>
