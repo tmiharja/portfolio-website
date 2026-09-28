@@ -25,8 +25,8 @@ export default function Home() {
           <Summary bio={site.bio} />
           <AboutGallery />
           <Experience roles={roles} />
-          <Projects projects={projects} />
           <Writing posts={posts} />
+          <Projects projects={projects} />
           <Beyond content={beyond} />
         </div>
       </main>
