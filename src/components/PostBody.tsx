@@ -31,8 +31,9 @@ const components: Components = {
   ul: ({ children }) => (
     <ul className="mt-5 list-disc space-y-2 pl-6 marker:text-muted">{children}</ul>
   ),
-  ol: ({ children }) => (
-    <ol className="mt-5 list-decimal space-y-2 pl-6 marker:text-muted">{children}</ol>
+  ol: ({ children, start }) => (
+    <ol start={start} className="mt-5 list-decimal space-y-2 pl-6 marker:text-muted">{children}</ol>
+  ),
   ),
   li: ({ children }) => <li className="pl-1">{children}</li>,
   blockquote: ({ children }) => (
