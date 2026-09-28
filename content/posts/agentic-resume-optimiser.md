@@ -4,6 +4,8 @@ summary: Documenting the entire process from initial design, solution architectu
 date: 2026-09-27
 ---
 
+![Demo](/img/posts/resume-optimiser.GIF)
+
 Over the years, I have spoken to many Indonesian professionals who are looking for opportunities overseas - some are friends of friends and others via my [instagram platform](https://www.instagram.com/ton_inmotion). Especially the past 2 years, the interest has risen significantly (see [#KaburAjaDulu](https://www.channelnewsasia.com/cna-insider/indonesian-youth-unemployment-brain-drain-kaburajadulu-run-away-cost-5371406)). 
 
 One of the questions that typically pop up is **how to best highlight past work/ experiences to recruiters of global/ multinational companies**. After screening hundreds of resumes for management consulting recruiting and helping several people last year to enhance their resumes, I noticed several key patterns and common pitfalls. While these may seem obvious to experienced job seekers in global markets like Singapore, Hong Kong, etc., I realize some tips/practices may not as obvious. This becomes my motivation to build the **'Resume Optimiser'** - with the aim of **codifying what I have learned and making it more accessible to Indonesian professionals looking for jobs in global markets** like Singapore, Hong Kong, etc.
