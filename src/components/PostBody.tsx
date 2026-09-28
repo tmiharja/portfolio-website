@@ -2,6 +2,12 @@ import type { Components } from "react-markdown";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+// Files in public/ are served from the site root, so "/public/img/x.png" is
+// really "/img/x.png". Accept both spellings in posts.
+function toPublicUrl(src: string) {
+  return src.replace(/^\/?public\//, "/");
+}
+
 // Maps each markdown element to the site's typography. Raw HTML in posts is
 // not rendered (react-markdown's default), so post files can't inject markup.
 const components: Components = {
@@ -46,7 +52,7 @@ const components: Components = {
     // is used instead of next/image.
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={typeof src === "string" ? src : undefined}
+      src={typeof src === "string" ? toPublicUrl(src) : undefined}
       alt={alt ?? ""}
       loading="lazy"
       className="mt-6 w-full rounded-xl border border-rule"

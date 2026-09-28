@@ -4,7 +4,7 @@ summary: Documenting the entire process from initial design, solution architectu
 date: 2026-09-27
 ---
 
-![Demo](/public/img/posts/resume-optimiser.gif)
+![Demo](/img/posts/resume-optimiser.gif)
 
 Over the years, I have spoken to many Indonesian professionals who are looking for opportunities overseas - some are friends of friends and others via my [instagram platform](https://www.instagram.com/ton_inmotion). Especially the past 2 years, the interest has risen significantly (see [#KaburAjaDulu](https://www.channelnewsasia.com/cna-insider/indonesian-youth-unemployment-brain-drain-kaburajadulu-run-away-cost-5371406)). 
 
@@ -30,13 +30,13 @@ A general chatbot can get you far nowadays, if you prompt it well and ask the ri
 Exploring the different design options and balancing the trade-offs across the agent pipeline are both exciting and tricky. Putting up necessary guard rails in place also took several iterations.
 
 ### Overall workflow
-![Overall workflow](/public/img/posts/resume-optimiser-overall-workflow.PNG)
+![Overall workflow](/img/posts/resume-optimiser-overall-workflow.PNG)
 
 
 ### Architecture and tech stack
 The overall system is one Next.js app deployed on Vercel, with 3 pay-as-you-go services. 
 
-![Overall workflow](/public/img/posts/resume-optimiser-overall-architecture.PNG)
+![Overall workflow](/img/posts/resume-optimiser-overall-architecture.PNG)
 
 The browser loads the pages and send each resume to a single serverless function (pre-stream check function). The function checks the file, asks Redis whether the visitor is within the limits before then initiating the agentic workflow. The agent workflow runs five agents through the Anthropic API and streams progress back as it goes. 
 
