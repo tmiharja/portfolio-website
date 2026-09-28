@@ -5,7 +5,7 @@ import Section from "./Section";
 
 export default function Writing({ posts }: { posts: Post[] }) {
   return (
-    <Section id="writing" title="Learnings & writing">
+    <Section id="writing" title="Blog">
       <ul className="space-y-5">
         {posts.map((post, i) => (
           <li key={post.slug}>
