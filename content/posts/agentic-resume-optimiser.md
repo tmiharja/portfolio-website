@@ -51,4 +51,5 @@ The browser loads the pages and send each resume to a single serverless function
 
 ## Closing
 The overall build was realy fun and I got to experiment with new tech stacks and interfaces that I have not yet touched before. Let me know if you have any feedback! :)
+Link: https://resume-scorer-optimiser.vercel.app/
 
