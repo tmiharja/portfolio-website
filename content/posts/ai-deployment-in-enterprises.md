@@ -1,5 +1,5 @@
 ---
-title: Deploying Agentic AI in Large Enterprises - Lessons from the Field
+title: Deploying AI & LLMs in Large Enterprises - Lessons from the Field
 summary: What it actually takes to move AI from a promising pilot to a production system people use - the workflow, the common pitfalls, and a credit risk case study.
 date: 2026-05-10
 ---
