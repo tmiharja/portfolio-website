@@ -7,6 +7,7 @@ date: 2026-05-10
 Over the past few years, I have led many AI and digital product design, build and deployments in large enterprises across banking, insurance and retail in APAC - from digital lending ventures and insurance platforms to data platforms and credit risk models. Over the course of many projects and deployments, the model is rarely the reason a deployment fails - it is everything around it: the data, the processes, the people and the controls. This post is a reflection of the past few years of work and my attempt to **codify the workflow and lessons I keep coming back to**.
 
 ## Typical deployment workflow for AI solutions
+![Deployment workflow](/img/posts/ai-delivery-six-steps.PNG)
 
 Every enterprise is different, but most successful deployments follow six broad steps:
 1. **Use case identification & prioritisation.** Start from a business problem, not a technology. Size the value (revenue, cost, risk), check feasibility, and agree on one or two use cases worth doing first. This is also where you secure a business owner who will own the outcome after launch.
